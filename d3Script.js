@@ -1,5 +1,5 @@
 const data = {
-  name: "catalytic sound",
+  name: "CATALYTIC QUARTERLY",
   children: [
     {
       name: "Andy",
@@ -68,16 +68,15 @@ const imageNodes = nodes.filter(node => node.data.img)
 const textNodes = nodes.filter(node => !node.data.img)
 
 const simulation = d3.forceSimulation(nodes)
-  .force("link", d3.forceLink(links).id(d => d.id).distance(0).strength(1))
-  .force("charge", d3.forceManyBody().strength(-50))
+  .force("link", d3.forceLink(links).id(d => d.id).distance(150).strength(1))
+  .force("charge", d3.forceManyBody().strength(-1000))
   .force("x", d3.forceX())
   .force("y", d3.forceY())
 
 const height = window.innerHeight - 6
 const width = window.innerWidth
 
-// const svg = d3.create("svg")
-//   .attr("viewBox", [-width / 2, -height / 2, width, height])
+
 const body = d3.select('body')
 body.style("margin", "0").style("padding", "0")
 
@@ -96,8 +95,8 @@ const svgImageNodes = svg.append("g")
   .data(imageNodes)
   .join("image")
   .attr("xlink:href", d => d.data.img)
-  .attr("height", 50)
-  .attr("width", 50)
+  .attr("height", 150)
+  .attr("width", 150)
   .call(drag(simulation))
 
 const svgTextNodes = svg.append("g")
@@ -105,22 +104,22 @@ const svgTextNodes = svg.append("g")
   .data(textNodes)
   .join("text")
   .text(d => d.data.name)
-  // .attr("height", 50)
-  // .attr("width", 50)
-  // .attr("font-size", 50)
-  // .attr("font-family", 50)
-  .attr("font-family", "sans-serif")
-  .attr("font-size", "10px")
-  .attr("fill", "red")
+  .attr("font-family", "Marion")
+  .attr("font-size", "40px")
+  .attr("fill", "black")
   .call(drag(simulation))
 
-// node.append("text")
-//   .text(d => d.data.name)
-//   .attr("fill", "#000")
-//   .attr("height", 50)
-//   .attr("width", 50)
-//   .attr("x", d => d.x)
-//   .attr("y", d => d.y)
+
+svgImageNodes.on('mouseenter', () => {
+  d3.select(this)
+    .attr("height", 155)
+    .attr("width", 155);
+  })
+  .on( 'mouseleave', () => {
+    d3.select( this )
+      .attr("height", 150)
+      .attr("width", 150);
+  });
 
 simulation.on("tick", () => {
   link
@@ -130,20 +129,10 @@ simulation.on("tick", () => {
     .attr("y2", d => d.target.y)
 
   svgImageNodes
-    .attr("x", d => d.x - 25)
-    .attr("y", d => d.y - 25)
+    .attr("x", d => d.x - 75)
+    .attr("y", d => d.y - 75)
   
     svgTextNodes
-    .attr("x", d => d.x - 25)
-    .attr("y", d => d.y - 25)
+    .attr("x", d => d.x)
+    .attr("y", d => d.y)
 })
-
-// invalidation.then(() => simulation.stop())
-
-// const body = document.getElementById('body')
-// console.log(svg)
-// body.append(svg.groups[0])
-
-// return svg.node()
-
-// console.log(svg)
