@@ -1,41 +1,6 @@
-const data = {
-  name: "CATALYTIC QUARTERLY",
-  children: [
-    {
-      name: "Andy",
-      children: [
-        {
-          name: "image 1",
-          img: "images/Andy/00EB08B2-C477-412C-B751-3DE14727F306.jpeg"
-        },
-        {
-          name: "image 2",
-          img: "images/Andy/36FBE2F8-3E91-46EB-87FE-6BED0BCED6D8.jpeg"
-        },
-        {
-          name: "image 3",
-          img: "images/Andy/C70E3BA5-9A1F-4248-8E2C-C617CDF5CA69.jpeg"
-        },
-      ]
-    },
-    {
-      name: "artist 2",
-      children: [
-        {
-          name: "image 1",
-          img: "images/Luke/20200301_143621.jpg"
-        },
-        {
-          name: "image 2",
-          img: "/Users/maxoppenheimer/Projects/catalytic-quarterly-9/images/Luke/20200301_151602.jpg"
-        }
-      ]
-    },
-    {
-      name: "artist 3"
-    }
-  ]
-}
+import data from './data.js'
+
+// joe morris png? who's is this? is joe morris an artist with only one pic?
 
 const drag = simulation => {
   function dragstarted(d) {
@@ -67,9 +32,17 @@ const nodes = root.descendants()
 const imageNodes = nodes.filter(node => node.data.img)
 const textNodes = nodes.filter(node => !node.data.img)
 
+const generateDistance = d => {
+  const distance = d.target.data.distance
+  return distance + (Math.random() * distance)
+}
+
 const simulation = d3.forceSimulation(nodes)
-  .force("link", d3.forceLink(links).id(d => d.id).distance(150).strength(1))
-  .force("charge", d3.forceManyBody().strength(-1000))
+  .force("link", d3.forceLink(links)
+  .id(d => d.id)
+  .distance(d => generateDistance(d))
+  .strength(1))
+  .force("charge", d3.forceManyBody().strength(-2000))
   .force("x", d3.forceX())
   .force("y", d3.forceY())
 
@@ -111,9 +84,9 @@ const svgTextNodes = svg.append("g")
 
 
 svgImageNodes.on('mouseenter', () => {
-  d3.select(this)
-    .attr("height", 155)
-    .attr("width", 155);
+    d3.select(this)
+      .attr("height", 155)
+      .attr("width", 155);
   })
   .on( 'mouseleave', () => {
     d3.select( this )
