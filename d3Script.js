@@ -1,4 +1,3 @@
-import data from './data.js'
 
 // joe morris png? who's is this? is joe morris an artist with only one pic?
 
