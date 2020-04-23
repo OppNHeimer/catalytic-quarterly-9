@@ -48,21 +48,27 @@ const simulation = d3.forceSimulation(nodes)
 const height = window.innerHeight - 6
 const width = window.innerWidth
 
-
 const body = d3.select('body')
 body.style("margin", "0").style("padding", "0")
 
+const zoomActions = () => {
+  container.attr("transform", d3.event.transform)
+}
+
 const svg = body.append('svg')
   .attr("viewBox", [-width / 2, -height / 2, width, height])
+  .call(d3.zoom().on("zoom", zoomActions))
 
-const link = svg.append("g")
+const container = svg.append("g") 
+
+const link = container.append("g")
   .attr("stroke", "#999")
   .attr("stroke-opacity", 0.6)
   .selectAll("line")
   .data(links)
   .join("line")
 
-const svgImageNodes = svg.append("g")
+const svgImageNodes = container.append("g")
   .selectAll("image")
   .data(imageNodes)
   .join("image")
@@ -71,7 +77,7 @@ const svgImageNodes = svg.append("g")
   .attr("width", 150)
   .call(drag(simulation))
 
-const svgTextNodes = svg.append("g")
+const svgTextNodes = container.append("g")
   .selectAll("text")
   .data(textNodes)
   .join("text")
