@@ -82,16 +82,16 @@ const svgTextNodes = svg.append("g")
   .call(drag(simulation))
 
 
-svgImageNodes.on('mouseenter', () => {
+svgImageNodes.on('mouseenter', function() {
     d3.select(this)
       .attr("height", 155)
-      .attr("width", 155);
+      .attr("width", 155)
   })
-  .on( 'mouseleave', () => {
+  .on( 'mouseleave', function() {
     d3.select( this )
       .attr("height", 150)
-      .attr("width", 150);
-  });
+      .attr("width", 150)
+  })
 
 simulation.on("tick", () => {
   link
