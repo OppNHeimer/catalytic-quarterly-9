@@ -99,7 +99,7 @@ const svgTextNodes = container.append('g')
   .join('text')
   .text(d => d.data.name)
   .attr('font-family', 'Marion')
-  .attr('font-size', '40px')
+  .attr('font-size', d => d.data.size || "40px")
   .attr('fill', 'black')
   .call(drag(simulation))
 
