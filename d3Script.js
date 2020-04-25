@@ -1,42 +1,57 @@
-
-// joe morris png? who's is this? is joe morris an artist with only one pic?
-let centered
-
+/*
+ * drag simulation for nodes
+ */
 const drag = simulation => {
-  function dragstarted(d) {
+  const dragstarted  = d => {
     if (!d3.event.active) simulation.alphaTarget(0.3).restart()
     d.fx = d.x
     d.fy = d.y
   }
-  
-  function dragged(d) {
+
+  const dragged = d => {
     d.fx = d3.event.x
     d.fy = d3.event.y
   }
-  
-  function dragended(d) {
+
+  const dragended = d => {
     if (!d3.event.active) simulation.alphaTarget(0)
     d.fx = null
     d.fy = null
   }
-  
+
   return d3.drag()
     .on('start', dragstarted)
     .on('drag', dragged)
     .on('end', dragended)
 }
 
+/*
+ * set up d3 data
+ * filter image from text nodes
+ */
 const root = d3.hierarchy(data)
 const links = root.links()
 const nodes = root.descendants()
 const imageNodes = nodes.filter(node => node.data.img)
 const textNodes = nodes.filter(node => !node.data.img)
+const height = window.innerHeight - 6
+const width = window.innerWidth
 
+
+const body = d3.select('body')
+body.style('margin', '0').style('padding', '0')
+
+/*
+ * generate random link distance
+ */
 const generateDistance = d => {
   const distance = d.target.data.distance
   return distance + (Math.random() * distance)
 }
 
+/*
+ * set up d3 force
+ */
 const simulation = d3.forceSimulation(nodes)
   .force('link', d3.forceLink(links)
   .id(d => d.id)
@@ -46,21 +61,21 @@ const simulation = d3.forceSimulation(nodes)
   .force('x', d3.forceX())
   .force('y', d3.forceY())
 
-const height = window.innerHeight - 6
-const width = window.innerWidth
-
-const body = d3.select('body')
-body.style('margin', '0').style('padding', '0')
-
-const zoomActions = () => {
+/*
+ * zoom controls on container
+ */
+const handleZoom = () => {
   container.attr('transform', d3.event.transform)
 }
 
+/*
+ * set up main svg, canvas, links and nodes
+ */
 const svg = body.append('svg')
   .attr('viewBox', [-width / 2, -height / 2, width, height])
-  .call(d3.zoom().on('zoom', zoomActions))
+  .call(d3.zoom().on('zoom', handleZoom))
 
-const container = svg.append('g') 
+const container = svg.append('g')
 
 const link = container.append("g")
   .attr("stroke", "#999")
@@ -88,21 +103,23 @@ const svgTextNodes = container.append('g')
   .attr('fill', 'black')
   .call(drag(simulation))
 
-function zoomed() {
-  container.attr("transform", d3.event.transform);
-}
-
 const zoom = d3.zoom()
       .scaleExtent([1, 40])
-      .on("zoom", zoomed);
+      .on("zoom", handleZoom);
 
-function clicked(d) {
+/*
+ * click handler to center image nodes
+ */
+let centered
+const isCentered = d => d === centered
+
+const handleClick = d => {
   let x, y, k
 
-  if (d && centered !== d) {
-    x = d.x 
-    y = d.y 
-    k = 5
+  if (d && !isCentered(d)) {
+    x = d.x
+    y = d.y
+    k = 4
     centered = d
   } else {
     x = 0
@@ -110,9 +127,9 @@ function clicked(d) {
     k = .5
     centered = null
   }
- 
+
   container.selectAll("image")
-    .classed("active", centered && function(d) { return d === centered })
+    .classed("active", centered && isCentered(d))
 
   svg
     .transition()
@@ -123,7 +140,11 @@ function clicked(d) {
     )
 }
 
-
+/*
+ * image nodes behavior
+ * enlarge on hover
+ * zoom in on click
+ */
 svgImageNodes
   .on('mouseenter', function() {
     d3.select(this)
@@ -136,8 +157,11 @@ svgImageNodes
       .attr('height', 150)
       .attr('width', 150)
   })
-  .on('click', clicked)
+  .on('click', handleClick)
 
+/*
+ * breathe life into the long legged beast
+ */
 simulation.on('tick', () => {
   link
     .attr('x1', d => d.source.x)
@@ -148,8 +172,8 @@ simulation.on('tick', () => {
   svgImageNodes
     .attr('x', d => d.x - 75)
     .attr('y', d => d.y - 75)
-  
-    svgTextNodes
+
+  svgTextNodes
     .attr('x', d => d.x)
     .attr('y', d => d.y)
 })
