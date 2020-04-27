@@ -76,6 +76,7 @@ const handleZoom = () => {
 const svg = body.append('svg')
   .attr('viewBox', [-width / 2, -height / 2, width, height]).attr('cursor', 'move')
   .call(d3.zoom().on('zoom', handleZoom))
+  .on("dblclick.zoom", null);
 
 const container = svg.append('g')
 
