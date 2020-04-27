@@ -72,17 +72,17 @@ const handleZoom = () => {
  * set up main svg, canvas, links and nodes
  */
 const svg = body.append('svg')
-  .attr('viewBox', [-width / 2, -height / 2, width, height])
+  .attr('viewBox', [-width / 2, -height / 2, width, height]).attr('cursor', 'move')
   .call(d3.zoom().on('zoom', handleZoom))
 
 const container = svg.append('g')
 
-const link = container.append("g")
-  .attr("stroke", "#999")
-  .attr("stroke-opacity", 0.6)
-  .selectAll("line")
+const link = container.append('g')
+  .attr('stroke', '#999')
+  .attr('stroke-opacity', 0.6)
+  .selectAll('line')
   .data(links)
-  .join("line")
+  .join('line')
 
 const svgImageNodes = container.append('g')
   .selectAll('image')
@@ -91,6 +91,7 @@ const svgImageNodes = container.append('g')
   .attr('xlink:href', d => d.data.img)
   .attr('height', 150)
   .attr('width', 150)
+  .attr('cursor', 'grab')
   .call(drag(simulation))
 
 const svgTextNodes = container.append('g')
@@ -99,13 +100,16 @@ const svgTextNodes = container.append('g')
   .join('text')
   .text(d => d.data.name)
   .attr('font-family', 'Marion')
-  .attr('font-size', d => d.data.size || "40px")
+  .attr('font-size', d => d.data.size || '40px')
   .attr('fill', 'black')
+  .attr('cursor', 'grab')
+  .call(wrap, 400)
   .call(drag(simulation))
 
+
 const zoom = d3.zoom()
-      .scaleExtent([1, 40])
-      .on("zoom", handleZoom);
+  .scaleExtent([1, 40])
+  .on('zoom', handleZoom);
 
 /*
  * click handler to center image nodes
@@ -127,9 +131,6 @@ const handleClick = d => {
     k = .5
     centered = null
   }
-
-  container.selectAll("image")
-    .classed("active", centered && isCentered(d))
 
   svg
     .transition()
@@ -174,6 +175,10 @@ simulation.on('tick', () => {
     .attr('y', d => d.y - 75)
 
   svgTextNodes
-    .attr('x', d => d.x)
+    .attr('x', function (d) { 
+      const length = d3.select(this).node().getComputedTextLength()
+      const offset = length > 400 ? 200 : length / 2
+      return d.x - offset 
+    })
     .attr('y', d => d.y)
 })

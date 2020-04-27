@@ -1,9 +1,9 @@
 const data = {
-  name: "CATALYTIC QUARTERLY",
+  name: "CATALYTIC QUARTERLY 9",
   distance: 500,
   children: [
     {
-      name: "from andy moor",
+      name: "andy moor",
       distance: 600,
       children: [
         {
@@ -42,7 +42,7 @@ const data = {
       ],
     },
     {
-      name: "from luke stewart",
+      name: "luke stewart",
       distance: 500,
       children: [
         {
@@ -68,7 +68,7 @@ const data = {
       ],
     },
     {
-      name: "from ben hall",
+      name: "ben hall",
       distance: 700,
       children: [
         {
@@ -86,7 +86,7 @@ const data = {
       ],
     },
     {
-      name: "from dave rempis",
+      name: "dave rempis",
       distance: 800,
       children: [
         {
@@ -110,7 +110,7 @@ const data = {
       ],
     },
     {
-      name: "from elisabeth harnik",
+      name: "elisabeth harnik",
       distance: 650,
       children: [
         {
@@ -128,7 +128,7 @@ const data = {
       ],
     },
     {
-      name: "from ig henneman",
+      name: "ig henneman",
       distance: 1000,
       children: [
         {
@@ -171,15 +171,15 @@ const data = {
           img: "images/Ig/Ustvolskaya_Shostak.jpg",
           distance: 100,
         },
-        // {
-        //   name: "I suddenly realized that I do have images from a selection of my vinyl collection that might be very appropriate for the next Quarterly! Music that's really dear to me. The order is at random. Nice covers too! Just let me know if you can use it. If there are too many images I can make a selection for a few myself.",
-        //   distance: 200,
-        //   size: "12px"
-        // }
+        {
+          name: "I suddenly realized that I do have images from a selection of my vinyl collection that might be very appropriate for the next Quarterly! Music that's really dear to me. The order is at random. Nice covers too! Just let me know if you can use it. If there are too many images I can make a selection for a few myself.",
+          distance: 200,
+          size: "12px"
+        }
       ],
     },
     {
-      name: "from mats gustafsson",
+      name: "mats gustafsson",
       distance: 600,
       children: [
         {
@@ -215,7 +215,7 @@ const data = {
       ],
     },
     {
-      name: "from joe morris",
+      name: "joe morris",
       distance: 350,
       children: [
         {
@@ -233,7 +233,7 @@ const data = {
       ],
     },
     {
-      name: "from ken vandermark",
+      name: "ken vandermark",
       distance: 800,
       children: [
         {
@@ -256,7 +256,7 @@ const data = {
       ],
     },
     {
-      name: "from nate wooley",
+      name: "nate wooley",
       distance: 500,
       children: [
         {
@@ -282,7 +282,7 @@ const data = {
       ],
     },
     {
-      name: "from paal nilssen-love",
+      name: "paal nilssen-love",
       distance: 500,
       children: [
         {
@@ -321,7 +321,7 @@ const data = {
       ],
     },
     {
-      name: "from sylvie courvoisier",
+      name: "sylvie courvoisier",
       distance: 700,
       children: [
         {
