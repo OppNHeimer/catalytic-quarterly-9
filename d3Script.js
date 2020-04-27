@@ -6,6 +6,7 @@ const drag = simulation => {
     if (!d3.event.active) simulation.alphaTarget(0.3).restart()
     d.fx = d.x
     d.fy = d.y
+    d.cursor = 'grabbing'
   }
 
   const dragged = d => {
@@ -17,6 +18,7 @@ const drag = simulation => {
     if (!d3.event.active) simulation.alphaTarget(0)
     d.fx = null
     d.fy = null
+    d.cursor = 'grab'
   }
 
   return d3.drag()
@@ -91,7 +93,6 @@ const svgImageNodes = container.append('g')
   .attr('xlink:href', d => d.data.img)
   .attr('height', 150)
   .attr('width', 150)
-  .attr('cursor', 'grab')
   .call(drag(simulation))
 
 const svgTextNodes = container.append('g')
@@ -102,7 +103,6 @@ const svgTextNodes = container.append('g')
   .attr('font-family', 'Marion')
   .attr('font-size', d => d.data.size || '40px')
   .attr('fill', 'black')
-  .attr('cursor', 'grab')
   .call(wrap, 400)
   .call(drag(simulation))
 
@@ -173,6 +173,7 @@ simulation.on('tick', () => {
   svgImageNodes
     .attr('x', d => d.x - 75)
     .attr('y', d => d.y - 75)
+    .attr('cursor', d => d.cursor || 'grab')
 
   svgTextNodes
     .attr('x', function (d) { 
@@ -181,4 +182,5 @@ simulation.on('tick', () => {
       return d.x - offset 
     })
     .attr('y', d => d.y)
+    .attr('cursor', d => d.cursor || 'grab')
 })
