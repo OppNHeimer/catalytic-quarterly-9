@@ -44,22 +44,14 @@ const body = d3.select('body')
 body.style('margin', '0').style('padding', '0')
 
 /*
- * generate random link distance
- */
-const generateDistance = d => {
-  const distance = d.target.data.distance
-  return distance + (Math.random() * distance)
-}
-
-/*
  * set up d3 force
  */
 const simulation = d3.forceSimulation(nodes)
   .force('link', d3.forceLink(links)
   .id(d => d.id)
-  .distance(d => generateDistance(d))
+  .distance(d => d.target.data.distance)
   .strength(1))
-  .force('charge', d3.forceManyBody().strength(-2000))
+  .force('charge', d3.forceManyBody().strength(-2500))
   .force('x', d3.forceX())
   .force('y', d3.forceY())
 
@@ -104,7 +96,7 @@ const svgTextNodes = container.append('g')
   .attr('font-family', 'Marion')
   .attr('font-size', d => d.data.size || '40px')
   .attr('fill', 'black')
-  .call(wrap, 400)
+  .call(wrap, 300)
   .call(drag(simulation))
 
 
@@ -177,11 +169,7 @@ simulation.on('tick', () => {
     .attr('cursor', d => d.cursor || 'grab')
 
   svgTextNodes
-    .attr('x', function (d) { 
-      const length = d3.select(this).node().getComputedTextLength()
-      const offset = length > 400 ? 200 : length / 2
-      return d.x - offset 
-    })
+    .attr('x', d => d.x - 20)
     .attr('y', d => d.y)
     .attr('cursor', d => d.cursor || 'grab')
 })

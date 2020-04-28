@@ -1,10 +1,13 @@
 const data = {
   name: "CATALYTIC QUARTERLY 9",
-  distance: 500,
+  type: 'title',
+  size: '100px',
   children: [
     {
       name: "andy moor",
-      distance: 600,
+      type: 'name',
+      size: '32px',
+      distance: 700,
       children: [
         {
           img: "images/Andy/00EB08B2-C477-412C-B751-3DE14727F306.jpeg",
@@ -12,19 +15,21 @@ const data = {
           children: [
             {
               name: "GENOVA AERIAL",
-              distance: 70,
-              size: "16px"
+              type: "caption",
+              distance: 60,
+              size: "12px"
             }
           ]
         },
         {
           img: "images/Andy/36FBE2F8-3E91-46EB-87FE-6BED0BCED6D8.jpeg",
-          distance: 100,
+          distance: 150,
           children: [
             {
               name: "PYLON",
-              distance: 70,
-              size: "16px"
+              type: "caption",
+              distance: 50,
+              size: "12px"
             }
           ]
         },
@@ -34,8 +39,9 @@ const data = {
           children: [
             {
               name: "FACTORY GERMANY",
-              distance: 70,
-              size: "16px"
+              type: "caption",
+              distance: 50,
+              size: "12px"
             }
           ]
         },
@@ -43,7 +49,9 @@ const data = {
     },
     {
       name: "luke stewart",
-      distance: 500,
+      type: 'name',
+      size: '32px',
+      distance: 1000,
       children: [
         {
           img: "images/Luke/20200301_143621.jpg",
@@ -51,150 +59,167 @@ const data = {
           children: [
             {
               name: "Prospect Geese.m4a",
-              distance: 80
+              type: 'sound',
+              size: '12px',
+              distance: 30
             }
           ]
         },
         {
           img: "images/Luke/20200301_151602.jpg",
-          distance: 100,
+          distance: 20,
           children: [
             {
               name: "Smith and 9th.m4a",
-              distance: 80.
+              type: 'sound',
+              size: '12px',
+              distance: 20
             }
           ]
-        },
-      ],
+        }
+      ]
     },
     {
       name: "ben hall",
-      distance: 700,
+      type: 'name',
+      size: '32px',
+      distance: 1000,
       children: [
         {
           img: "images/Ben/image0.png",
-          distance: 150,
+          distance: 90,
         },
         {
           img: "images/Ben/image1.jpeg",
-          distance: 80,
+          distance: 140,
         },
         {
           img: "images/Ben/image2.jpeg",
-          distance: 100,
+          distance: 130,
         },
       ],
     },
     {
       name: "dave rempis",
-      distance: 800,
+      type: 'name',
+      size: '32px',
+      distance: 1200,
       children: [
         {
           img: "images/Dave/IMG_2825.jpeg",
-          distance: 150,
+          distance: 130,
         },
         {
           img: "images/Dave/IMG_2834.jpeg",
-          distance: 90,
+          distance: 70,
         },
         {
           img: "images/Dave/IMG_2838.jpeg",
           distance: 100,
         },
         {
-          // Need to figure out line wrapping
           name: "\"This is an homage to my friend Ross Taylor in Columbia, SC who organizes concerts there.\"",
-          distance: 50,
-          size: "16px",
+          type: "description",
+          distance: 20,
+          size: "12px",
         }
       ],
     },
     {
       name: "elisabeth harnik",
-      distance: 650,
+      type: 'name',
+      size: '32px',
+      distance: 1000,
       children: [
         {
           img: "images/ElisabethHarnik/IMG_20200122_104321.jpg",
-          distance: 100,
+          distance: 70,
         },
         {
           img: "images/ElisabethHarnik/IMG_20200128_200204.jpg",
-          distance: 150,
+          distance: 120,
         },
         {
           img: "images/ElisabethHarnik/IMG_20200204_163548.jpg",
-          distance: 100,
+          distance: 80,
         },
       ],
     },
     {
       name: "ig henneman",
-      distance: 1000,
+      type: 'name',
+      size: '32px',
+      distance: 1500,
       children: [
         {
+          name: "I suddenly realized that I do have images from a selection of my vinyl collection that might be very appropriate for the next Quarterly! Music that's really dear to me. The order is at random. Nice covers too! Just let me know if you can use it. If there are too many images I can make a selection for a few myself.",
+          type: 'description',
+          distance: 120,
+          size: "12px"
+        },
+        {
           img: "images/Ig/AlbertAyler.jpeg",
-          distance: 100,
+          distance: 150,
         },
         {
           img: "images/Ig/Beethoven strQ.jpg",
-          distance: 100,
+          distance: 220,
         },
         {
           img: "images/Ig/IanDury_newboots and panties.jpg",
-          distance: 100,
+          distance: 220,
         },
         {
           img: "images/Ig/ICP0607.jpg",
-          distance: 100,
+          distance: 310,
         },
         {
           img: "images/Ig/Ives_H-Symphonie.jpg",
-          distance: 100,
+          distance: 150,
         },
         {
           img: "images/Ig/MinkDeville.jpg",
-          distance: 100,
+          distance: 250,
         },
         {
           img: "images/Ig/MONK Pure Monk.jpg",
-          distance: 100,
+          distance: 200,
         },
         {
           img: "images/Ig/RStones_after-math.jpg",
-          distance: 100,
+          distance: 170,
         },
         {
           img: "images/Ig/Stravinsky_LesNoces.jpg",
-          distance: 100,
+          distance: 200,
         },
         {
           img: "images/Ig/Ustvolskaya_Shostak.jpg",
-          distance: 100,
-        },
-        {
-          name: "I suddenly realized that I do have images from a selection of my vinyl collection that might be very appropriate for the next Quarterly! Music that's really dear to me. The order is at random. Nice covers too! Just let me know if you can use it. If there are too many images I can make a selection for a few myself.",
-          distance: 200,
-          size: "12px"
+          distance: 240,
         }
       ],
     },
     {
       name: "mats gustafsson",
-      distance: 600,
+      type: 'name',
+      size: '32px',
+      distance: 450,
       children: [
         {
           img: "images/Mats/mats-solo.jpg",
-          distance: 200,
+          distance: 100,
           children: [
             {
               name: "The recordings from this concert will be released as April’s Catalytic Artist Album.",
-              distance: 80,
-              size: "16px"
+              type: "caption",
+              distance: 150,
+              size: "12px"
             },
             {
               name: "Solo performance Live at the Centro d’Arte Padova, September 16th, 2016",
-              distance: 80,
-              size: "16px"
+              type: "caption",
+              distance: 50,
+              size: "12px"
             }
           ]
         }
@@ -202,7 +227,9 @@ const data = {
     },
     {
       name: "Ingebrit",
-      distance: 500,
+      type: 'name',
+      size: '32px',
+      distance: 1000,
       children: [
         {
           img: "images/Ingebrit/image0.png",
@@ -216,7 +243,9 @@ const data = {
     },
     {
       name: "joe morris",
-      distance: 350,
+      type: 'name',
+      size: '32px',
+      distance: 1500,
       children: [
         {
           img: "images/Joe/BLACK PANTHER PARTY.jpg",
@@ -224,7 +253,7 @@ const data = {
         },
         {
           img: "images/Joe/IMG_20180508_172953.jpg",
-          distance: 100,
+          distance: 150,
         },
         {
           img: "images/Joe/IMG_20180622_100245.jpg",
@@ -234,7 +263,9 @@ const data = {
     },
     {
       name: "ken vandermark",
-      distance: 800,
+      type: 'name',
+      size: '32px',
+      distance: 1700,
       children: [
         {
           img: "images/Ken/Onamichi 1.jpg",
@@ -250,6 +281,7 @@ const data = {
         },
         {
           name: "onamichi, japan",
+          type: "description",
           distance: 50,
           size: "20px"
         }
@@ -257,25 +289,31 @@ const data = {
     },
     {
       name: "nate wooley",
-      distance: 500,
+      type: 'name',
+      size: '32px',
+      distance: 900,
       children: [
         {
           img: "images/Nate/Big Bill Haywood.jpg",
-          distance: 100,
+          distance: 140,
           children: [
             {
               name: "Big Bill Haywood",
-              distance: 150,
+              type: 'caption',
+              size: '12px',
+              distance: 80
             }
           ],
         },
         {
           img: "images/Nate/MotherJonesFinger.jpg",
-          distance: 100,
+          distance: 80,
           children: [
             {
               name: "and Mother Jones",
-              distance: 150
+              type: 'caption',
+              size: '12px',
+              distance: 60
             },
           ],
         },
@@ -283,27 +321,31 @@ const data = {
     },
     {
       name: "paal nilssen-love",
-      distance: 500,
+      type: 'name',
+      size: '32px',
+      distance: 750,
       children: [
         {
           img: "images/Paal/Paal1.jpg",
-          distance: 100,
+          distance: 120,
           children: [
             {
               name: "Filhos de Gandhi, in Salvador",
-              distance: 120,
-              size: "16px"
+              type: "caption",
+              distance: 180,
+              size: "12px"
             },
           ]
         },
         {
           img: "images/Paal/Paal2.jpg",
-          distance: 100,
+          distance: 70,
           children: [
             {
               name: "Pre-carnival in Nazaré da Mata",
-              distance: 120,
-              size: "16px"
+              type: "caption",
+              distance: 50,
+              size: "12px"
             },
           ]
         },
@@ -313,8 +355,9 @@ const data = {
           children: [
             {
               name: "Maracatu in Recife",
-              distance: 120,
-              size: "16px"
+              type: "caption",
+              distance: 50,
+              size: "12px"
             },
           ]
         },
@@ -322,38 +365,43 @@ const data = {
     },
     {
       name: "sylvie courvoisier",
-      distance: 700,
+      type: 'name',
+      size: '32px',
+      distance: 1500,
       children: [
         {
           img: "images/Sylvie/C0D3CECA-5859-4CF6-9487-E3BB310ACAFB.jpeg",
-          distance: 100,
+          distance: 180,
         },
         {
           img: "images/Sylvie/C0F1AC60-466D-46D8-8E30-55BEF8667568.jpg",
-          distance: 200,
-        },
-        {
-          img: "images/Sylvie/C5F0BE67-367C-4A6C-9A08-9D3097F90EB1.jpeg",
-          distance: 100,
-        },
-        {
-          img: "images/Sylvie/CDF1B544-1377-4A86-A9BE-6F64D3DA06A9.jpeg",
           distance: 150,
         },
         {
+          img: "images/Sylvie/C5F0BE67-367C-4A6C-9A08-9D3097F90EB1.jpeg",
+          distance: 220,
+        },
+        {
+          img: "images/Sylvie/CDF1B544-1377-4A86-A9BE-6F64D3DA06A9.jpeg",
+          distance: 200,
+        },
+        {
           img: "images/Sylvie/Color_Sylvie_Courvoisier_&_Mark_Feldman_Quartet_featuring_Drew_Gress_and_Tom_Rainey_by_Peter_Gannushkin-11.jpg",
-          distance: 100,
+          distance: 140,
         },
         {
           name: "Here are a few pictures that I took, and one of me from peter ganunsky from a concert in Norway.",
-          distance: 160,
-          size: "16px",
+          type: 'description',
+          distance: 30,
+          size: "12px",
         },
       ],
     },
     {
       name: "Tim",
-      distance: 500,
+      type: 'name',
+      size: '32px',
+      distance: 800,
       children: [
         {
           img: "images/Tim/Mar del Plata.jpg",
@@ -361,11 +409,11 @@ const data = {
         },
         {
           img: "images/Tim/mexico city.jpg",
-          distance: 100,
+          distance: 150,
         },
         {
           img: "images/Tim/Vilnius. Lithuania.jpg",
-          distance: 100,
+          distance: 150,
         },
       ],
     },
