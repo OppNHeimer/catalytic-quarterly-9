@@ -172,4 +172,4 @@ simulation.on('tick', () => {
     .attr('x', d => d.x - 20)
     .attr('y', d => d.y)
     .attr('cursor', d => d.cursor || 'grab')
-})
+})  
