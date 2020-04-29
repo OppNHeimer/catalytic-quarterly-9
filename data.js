@@ -7,7 +7,7 @@ const data = {
       name: "andy moor",
       type: 'name',
       size: '32px',
-      distance: 700,
+      distance: 800,
       children: [
         {
           img: "images/Andy/00EB08B2-C477-412C-B751-3DE14727F306.jpeg",
@@ -103,7 +103,7 @@ const data = {
       name: "dave rempis",
       type: 'name',
       size: '32px',
-      distance: 1200,
+      distance: 1100,
       children: [
         {
           img: "images/Dave/IMG_2825.jpeg",
@@ -149,10 +149,10 @@ const data = {
       name: "ig henneman",
       type: 'name',
       size: '32px',
-      distance: 1500,
+      distance: 1600,
       children: [
         {
-          name: "I suddenly realized that I do have images from a selection of my vinyl collection that might be very appropriate for the next Quarterly! Music that's really dear to me. The order is at random. Nice covers too! Just let me know if you can use it. If there are too many images I can make a selection for a few myself.",
+          name: "\"I suddenly realized that I do have images from a selection of my vinyl collection that might be very appropriate for the next Quarterly! Music that's really dear to me. The order is at random. Nice covers too!\"",
           type: 'description',
           distance: 120,
           size: "12px"
@@ -226,7 +226,7 @@ const data = {
       ]
     },
     {
-      name: "Ingebrit",
+      name: "ingebrit håker flaten",
       type: 'name',
       size: '32px',
       distance: 1000,
@@ -234,15 +234,31 @@ const data = {
         {
           img: "images/Ingebrit/image0.png",
           distance: 100,
+          children: [
+            {
+              name: "And one from last tour this month from the trains in Norway on the road with Atomic.\"",
+              type: "caption",
+              distance: 50,
+              size: "12px"
+            }
+          ]
         },
         {
           img: "images/Ingebrit/image1.jpeg",
           distance: 100,
+          children: [
+            {
+              name: "\"Peter Brötzmann and myself from after a school concert for kids I did with him and Jason Adasiewicz in Austin back quite a few years ago.",
+              type: "caption",
+              distance: 50,
+              size: "12px"
+            }
+          ]
         },
       ],
     },
     {
-      name: "joe morris",
+      name: "joe mcphee",
       type: 'name',
       size: '32px',
       distance: 1500,
@@ -390,15 +406,15 @@ const data = {
           distance: 140,
         },
         {
-          name: "Here are a few pictures that I took, and one of me from peter ganunsky from a concert in Norway.",
-          type: 'description',
+          name: "\"Here are a few pictures that I took, and one of me from peter ganunsky from a concert in Norway.\"",
+          type: 'description\"',
           distance: 30,
           size: "12px",
         },
       ],
     },
     {
-      name: "Tim",
+      name: "tim daisy",
       type: 'name',
       size: '32px',
       distance: 800,
@@ -406,14 +422,58 @@ const data = {
         {
           img: "images/Tim/Mar del Plata.jpg",
           distance: 100,
+          children: [
+            {
+              name: 'mar del plata, argentina',
+              type: 'caption',
+              distance: 50,
+              size: "12px"
+            }
+          ]
         },
         {
           img: "images/Tim/mexico city.jpg",
           distance: 150,
+          children: [
+            {
+              name: 'mexico city',
+              type: 'caption',
+              distance: 50,
+              size: "12px"
+            }
+          ]
         },
         {
           img: "images/Tim/Vilnius. Lithuania.jpg",
           distance: 150,
+          children: [
+            {
+              name: 'vilnius, lithuania',
+              type: 'caption',
+              distance: 50,
+              size: "12px"
+            }
+          ]
+        },
+      ],
+    },
+    {
+      name: "joe morris",
+      type: 'name',
+      size: '32px',
+      distance: 900,
+      children: [
+        {
+          img: "images/JoeMorris.JPG",
+          distance: 100,
+          children: [
+            {
+              name: "Music Unlimited 31 Festival 2017 in Wels, Austria",
+              type: "caption",
+              distance: 50,
+              size: "12px"
+            },
+          ]
         },
       ],
     },
