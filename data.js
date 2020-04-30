@@ -1,8 +1,14 @@
 const data = {
   name: "CATALYTIC QUARTERLY 9",
   type: 'title',
-  size: '100px',
+  size: '112px',
   children: [
+    {
+      name: "IMAGES EDITION",
+      type: "title captions",
+      size: "20px",
+      distance: 300,
+    },
     {
       name: "andy moor",
       type: 'name',

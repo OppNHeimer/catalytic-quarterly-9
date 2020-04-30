@@ -7,6 +7,8 @@
   <link href="assets/Marion-Bold.ttf"" rel="font/ttf">
   <link href="assets/Marion-Italic.ttf"" rel="font/ttf">
   <link href="assets/Marion-Regular.ttf"" rel="font/ttf">
+  <link href="assets/AlteHaasGroteskRegular.ttf"" rel="font/ttf">
+  <link href="assets/AlteHaasGroteskBold.ttf"" rel="font/ttf">
   <script src="https://d3js.org/d3-zoom.v1.min.js"></script>
   <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
   <script src="https://d3js.org/d3-quadtree.v1.min.js"></script>
@@ -18,11 +20,37 @@
   <script src="https://d3js.org/d3-transition.v1.min.js"></script>
   <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
   <script src="https://d3js.org/d3-ease.v1.min.js"></script>
+  <script src="./data.js" ></script>
+  <script src="./d3Helpers.js" ></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body id='body'>
+<body id="body">
+  <script src="./d3Script.js" ></script>
+  <div class="footer">
+    <div class="footer-left">
+      <div class="footer-left-social-links">
+        <div>
+          <a class="social-link" href="https://www.facebook.com/catalytic.sound/" target="_blank" rel="noopener noreferrer">
+            <img class="social-link-icon" src="./assets/f_logo_RGB-Black_58.png" alt="facebook icon">
+            <p class="social-link-text" >/catalytic.sound</p>
+          </a>
+        </div>
+        <div>
+          <a class="social-link" href="https://www.instagram.com/catalytic_sound/?hl=en" target="_blank" rel="noopener noreferrer">
+            <img class="social-link-icon" src="./assets/glyph-logo_May2016.png" alt="instagram icon">
+            <p class="social-link-text" >/catalytic_sound</p>
+          </a>
+        </div>
+      </div>
+      <div class="footer-left-main">
+        <p class="fede-credit">Print version by <a href="https://www.instagram.com/federicoplva/" target="_blank" rel="noopener noreferrer">Federico Peñalva</a></p>
+        <a class="homepage-link" href="https://catalyticsound.com/" target="_blank" rel="noopener noreferrer">www.catalyticsound.com</a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p class="footer-right-text">© & ℗ Retained by the artists / 2020 - Printed in March 2020</p>
+      <p class="footer-right-text">Design by Santiago Quintana and <a href="https://www.maxho.io/" target="_blank" rel="noopener noreferrer">Max Oppenheimer</a></p>
+    </div>
+  </div>
 </body>
-<script src="./data.js" ></script>
-
-<script src="./d3Helpers.js" ></script>
-<script src="./d3Script.js" ></script>
 </html>

@@ -173,3 +173,20 @@ simulation.on('tick', () => {
     .attr('y', d => d.y)
     .attr('cursor', d => d.cursor || 'grab')
 })  
+
+svg.call(zoom.transform,
+    d3.zoomIdentity
+    .scale(0.8)
+    .translate(-00, -300),
+  )
+
+svg.transition()
+  .ease(d3.easeCubic)
+  .duration(2000)
+  .call(zoom.transform,
+  d3.zoomIdentity
+    .scale(1.2)
+    .translate(-600, -300)
+  )
+
+
