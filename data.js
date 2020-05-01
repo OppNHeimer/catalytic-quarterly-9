@@ -120,13 +120,13 @@ const data = {
       ],
     },
     {
-      name: "ingebrit håker flaten",
+      name: "ingebrigt håker flaten",
       type: 'name',
       size: '32px',
       distance: 1400,
       children: [
         {
-          img: "images/Ingebrit/image1.jpeg",
+          img: "images/Ingebrigt/image1.jpeg",
           distance: 50,
           children: [
             {
@@ -138,7 +138,7 @@ const data = {
           ]
         },
         {
-          img: "images/Ingebrit/image0.png",
+          img: "images/Ingebrigt/image0.png",
           distance: 120,
           children: [
             {
