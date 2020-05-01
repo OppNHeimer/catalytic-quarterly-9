@@ -50,7 +50,7 @@ const simulation = d3.forceSimulation(nodes)
   .force('link', d3.forceLink(links)
   .id(d => d.id)
   .distance(d => d.target.data.distance)
-  .strength(1))
+  .strength(.4))
   .force('charge', d3.forceManyBody().strength(-2500))
   .force('x', d3.forceX())
   .force('y', d3.forceY())
@@ -176,17 +176,18 @@ simulation.on('tick', () => {
 
 svg.call(zoom.transform,
     d3.zoomIdentity
-    .scale(0.8)
-    .translate(-00, -300),
+    .scale(1.2)
+    .translate(-700, -1400)
   )
 
 svg.transition()
   .ease(d3.easeCubic)
+  .delay(1000)
   .duration(2000)
   .call(zoom.transform,
   d3.zoomIdentity
-    .scale(1.2)
-    .translate(-600, -300)
-  )
+  .scale(0.5)
+  .translate(-200, -800), 
+)
 
 
