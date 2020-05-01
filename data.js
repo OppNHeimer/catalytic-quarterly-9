@@ -1,7 +1,7 @@
 const data = {
   name: "CATALYTIC QUARTERLY 9",
   type: 'title',
-  size: '124px',
+  size: '112px',
   children: [
     {
       name: "IMAGES EDITION",
