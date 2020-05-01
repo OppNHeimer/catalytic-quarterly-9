@@ -184,8 +184,8 @@ svg.call(zoom.transform,
 
 svg.transition()
   .ease(d3.easeCubic)
-  .delay(1000)
-  .duration(2000)
+  .delay(1500)
+  .duration(1000)
   .call(zoom.transform,
   d3.zoomIdentity
   .scale(0.4)
