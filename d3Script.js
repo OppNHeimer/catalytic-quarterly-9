@@ -59,6 +59,8 @@ const simulation = d3.forceSimulation(nodes)
  * zoom controls on container
  */
 const handleZoom = () => {
+  if (d3.event.transform.k < 0.005) { d3.event.transform.k = 10}
+  if (d3.event.transform.k > 10) { d3.event.transform.k = 0.005}
   container.attr('transform', d3.event.transform)
 }
 
