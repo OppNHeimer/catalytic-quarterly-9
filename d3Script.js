@@ -177,7 +177,7 @@ simulation.on('tick', () => {
 svg.call(zoom.transform,
     d3.zoomIdentity
     .scale(1.2)
-    .translate(-700, -1400)
+    .translate(-500, -1500)
   )
 
 svg.transition()
@@ -186,7 +186,7 @@ svg.transition()
   .duration(2000)
   .call(zoom.transform,
   d3.zoomIdentity
-  .scale(0.5)
+  .scale(0.45)
   .translate(-200, -800), 
 )
 

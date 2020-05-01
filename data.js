@@ -1,13 +1,13 @@
 const data = {
   name: "CATALYTIC QUARTERLY 9",
   type: 'title',
-  size: '112px',
+  size: '124px',
   children: [
     {
       name: "IMAGES EDITION",
       type: "title captions",
-      size: "20px",
-      distance: 200,
+      size: "30px",
+      distance: 150,
     },
     {
       name: "nate wooley",
@@ -308,7 +308,7 @@ const data = {
             {
               name: "Filhos de Gandhi, in Salvador",
               type: "caption",
-              distance: 180,
+              distance: 50,
               size: "12px"
             },
           ]
@@ -470,7 +470,7 @@ const data = {
             {
               name: "The recordings from this concert will be released as April’s Catalytic Artist Album.",
               type: "caption",
-              distance: 200,
+              distance: 130,
               size: "12px"
             },
             {
